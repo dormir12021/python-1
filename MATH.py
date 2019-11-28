@@ -1,5 +1,3 @@
-list = ['math', 'science', 'humanities']
-
-for item in list:
-for study in item:
-        print(study)
+subjects = ["math", "science", "humanities"]
+for x in subjects:
+  print(x)
