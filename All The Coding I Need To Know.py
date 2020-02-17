@@ -8,8 +8,8 @@ print(name_input + " loves to feed his animals in the morning.")
 print(name_input + " also loves being on the road with their huge truck.") #the + adds the variable to the string
 
 #Three basic types of data 
-is_male = False
-character_age = 60.895895
+is_male = True
+character_age = 16.5
 character_name = "Ramon"
 
 # a string 
