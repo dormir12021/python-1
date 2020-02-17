@@ -1,3 +1,5 @@
+#Not finished I still need to write down  functions, while loops.. etc. 
+
 print("Hello World!") #Prints into console whatever is in the string.
 
 name_input = "Ramon" #Variable, can be changed in the ""
