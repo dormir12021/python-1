@@ -1,27 +1,17 @@
 from tkinter import *
 import os
-import shutil
-
 
 def register_user():
 
-    global username_info #for testing delete later 
-    global password_info #for testing delete later
-
-    
     username_info = username.get()
     password_info = password.get()
 
-    #os.makedirs(username_info)
-    file=open(username_info, "w")#change username_info to change the name of the file that has the username and password
+    file=open(username_info, "w")
     file.write("Username:\n")
     file.write(username_info +"\n")
     file.write("Password:\n")
     file.write(password_info)
     file.close()
-    #shutil.move('dataname', username_info)
-
-    
     
     entry_username.delete(0, END)
     entry_password.delete(0, END)
@@ -43,8 +33,8 @@ def saved():
 
 
 def save():
-    filename_get = filename.get()
-    notes_get = notes.get()
+    filename_get = raw_filename.get()
+    notes_get = raw_notes.get()
 
     data = open(filename_get, "w")
     data.write(notes_get)
@@ -58,45 +48,71 @@ def session():
     screen6.geometry("350x250")
     Label(screen6, text = "Welcome to the dashboard").pack()
     Button(screen6, text = "Create secret note", command = create_secret_notes).pack()
-    Button(screen6, text = "View secret note", command = view_secret_notes).pack()
-    Button(screen6, text = "Delete secret note").pack()
+    Button(screen6, text = "View secret note", command = view_notes).pack()
+    Button(screen6, text = "Delete secret note", command = delete_note).pack()
+
+def delete_note():
+    screen10 = Toplevel(screen)
+    screen10.title("Delete")
+    screen10.geometry("250x250")
+    all_files = os.listdir()
+    Label(screen10, text = "Choose a filename to delete: ").pack()
+    Label(screen10, text = all_files).pack()
+    global raw_delete
+    raw_delete = StringVar()
+    Entry(screen10, textvariable=raw_delete).pack()
+    Button(screen10, command=delete_note1, text = "OK").pack()
+
+def delete_note1():
+    delete = raw_delete.get()
+    os.remove(delete)
+    screen11 = Toplevel(screen)
+    screen11.title("Notes")
+    screen11.geometry("400x400")
+    Label(screen11, text = delete + " has been removed").pack()
+
 
 def create_secret_notes():
-    global filename
-    global notes
+    global raw_filename
+    global raw_notes
     global screen7
 
-    filename = StringVar()
-    notes = StringVar()
+    raw_filename = StringVar()
+    raw_notes = StringVar()
     
     screen7 = Toplevel(screen)
     screen7.title("Make Notes")
     screen7.geometry("250x150")
     Label(screen7, text = "Enter a filename: ").pack()
-    Entry(screen7, textvar = filename).pack()
+    Entry(screen7, textvariable = raw_filename).pack()
     Label(screen7, text = "Enter secret notes: ").pack()
-    Entry(screen7, textvar = notes).pack()
+    Entry(screen7, textvariable = raw_notes).pack()
     Button(screen7, text = "Save", command = save).pack()
 
-def view_secret_notes():
-
-    global filename
-    global notes
-    global screen8
-
-    filename = StringVar()
-    notes = StringVar()
+def view_notes1():
+    filename1 = raw_filename1.get()
+    data = open(filename1, "r")
+    data1 = data.read()
+    screen9 = Toplevel(screen)
+    screen9.title("Notes")
+    screen9.geometry("400x400")
+    Label(screen9, text = data1).pack()
     
+def view_notes():
     screen8 = Toplevel(screen)
-    screen8.title("View Notes")
-    screen8.geometry("250x150")
-
-    list_files = os.listdir()
-    Label(screen8, text = "Choose one of the filenames").pack()
+    screen8.title("Info")
+    screen8.geometry("250x250")
+    all_files = os.listdir()
+    Label(screen8, text = "Choose a filename below: ").pack()
     Label(screen8, text = all_files).pack()
-
+    global raw_filename1
+    raw_filename1 = StringVar()
+    Entry(screen8, textvariable=raw_filename1).pack()
+    Button(screen8, command=view_notes1, text = "OK").pack()
     
-   
+    
+
+
 def pass_not_recognized():
     global screen4
     screen4 = Toplevel(screen)
@@ -118,12 +134,8 @@ def login_verify():
     username1 = user_verify.get()
     password1 = pass_verify.get()
 
-    entry_password1.delete(0, END)
-    entry_username1.delete(0, END)
-
-    
-    list_files = os.listdir() #Make it so it checks inside folder 
-    if username1 in list_files:
+    list_of_files = os.listdir()
+    if username1 in list_of_files:
         file1=open(username1, "r")
         verify = file1.read().splitlines()
 
@@ -217,8 +229,8 @@ def main_screen():
     global screen
     screen = Tk()
     screen.geometry("350x250")
-    screen.title("Secret Notes Beta")
-    Label(text="Secret Notes Beta", bg = "grey", width = "300", height = "2", font = ("Roboto", 12)).pack()
+    screen.title("Secret Notes")
+    Label(text="Secret Notes", bg = "grey", width = "300", height = "2", font = ("Roboto", 12)).pack()
     Label(text = "").pack()
     Button(text = "Login", height = "1", width = "25", font = ("roboto", 12), command = login_page).pack()
     Label(text = "").pack()
