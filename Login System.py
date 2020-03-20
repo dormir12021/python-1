@@ -109,9 +109,6 @@ def view_notes():
     raw_filename1 = StringVar()
     Entry(screen8, textvariable=raw_filename1).pack()
     Button(screen8, command=view_notes1, text = "OK").pack()
-    
-    
-
 
 def pass_not_recognized():
     global screen4
