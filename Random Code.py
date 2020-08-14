@@ -142,25 +142,25 @@ my_num - 5
 # (sqrt(50))
 
 # User Input, you can get many user inputs.
-user_input = input("Enter your name: ")
+# user_input = input("Enter your name: ")
 # print("Hello " + user_input + ".")
 
 # Getting integers and adding them together
-number = input("Enter a number: ")
-number2 = input("Enter a second number: ")
-total = int(number) + int(number2)
+# number = input("Enter a number: ")
+# number2 = input("Enter a second number: ")
+# total = int(number) + int(number2)
 # (total)
 
 # Getting decimals and adding them together
-number = input("Enter a number: ")
-number2 = input("Enter a second number: ")
+# number = input("Enter a number: ")
+# number2 = input("Enter a second number: ")
 total = float(number) + float(number2)
 # (total)
 
 # User input in setences!
-color = input("Enter your favorite color: ")
-name = input("Enter a persons name: ")
-icecream_flavor = input("Enter your favorite icecream flavor: ")
+# color = input("Enter your favorite color: ")
+# name = input("Enter a persons name: ")
+# icecream_flavor = input("Enter your favorite icecream flavor: ")
 
 # print("The sky is " + color + "!")
 # print("Hello " + name + " how are you today?")
@@ -243,18 +243,15 @@ coordinates = (3, 7, 9)
 # Functions
 
 
-def say_hello():  # has to start with def
-    # print("Hello!")  # has to be indented
+# def say_hello():  # has to start with def
+# print("Hello!")  # has to be indented
+
+# say_hello()  # calls function
 
 
-say_hello()  # calls function
-
-
-def say_hello():
-    # print("Hello!")
-
-
-say_hello()
+# def say_hello():
+# print("Hello!")
+# say_hello()
 
 
 condition = True
