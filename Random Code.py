@@ -154,7 +154,7 @@ my_num - 5
 # Getting decimals and adding them together
 # number = input("Enter a number: ")
 # number2 = input("Enter a second number: ")
-total = float(number) + float(number2)
+# total = float(number) + float(number2)
 # (total)
 
 # User input in setences!
@@ -226,7 +226,7 @@ items.sort()
 
 # puts the list in reverse
 random_numbers = [1, 28, 2893, 219, 2, 189]
-radom_numbers.reverse()
+random_numbers.reverse()
 # (random_numbers)
 
 # Copys the list from the first list
