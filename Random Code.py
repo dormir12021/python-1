@@ -262,11 +262,19 @@ if condition:
 else:
     x = 0
 
-print(x)
+# print(x)
 
 # Faster way
 condition = True
 
 x = 1 if condition else 0
 
-print(x)
+# print(x)
+
+# Underscore Placeholders
+
+num1 = 9_292_938_373_374
+num2 = 38_641_230_896_094  # you can add underscores between the numbers
+
+total = num1 + num2
+print(total)
