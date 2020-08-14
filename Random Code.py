@@ -253,12 +253,20 @@ coordinates = (3, 7, 9)
 # print("Hello!")
 # say_hello()
 
-
+# Ternary Conditionals
+# Slower way
 condition = True
 
 if condition:
     x = 1
 else:
     x = 0
+
+print(x)
+
+# Faster way
+condition = True
+
+x = 1 if condition else 0
 
 print(x)
