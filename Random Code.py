@@ -1,5 +1,4 @@
-# Not finished I still need to write down  functions, while loops.. etc.
-
+from matplotlib import pyplot as plt
 from math import *  # More Math functions (Module)
 # ("Hello World!")  # Prints into console whatever is in the string.
 
@@ -280,3 +279,24 @@ total = num1 + num2
 # print(f'{total:,}')
 
 # Context Managers
+txt = "First module: {}".format(__name__)
+# print(txt)
+
+
+dev_x = [1, 2, 3, 4, 5]
+dev_y = [12, 9, 4, 5, 3]
+
+
+more_dev_x = [1, 2, 3, 4, 5]
+more_dev_y = [2, 3, 5, 7, 8]
+
+plt.plot(dev_x, dev_y)
+plt.plot(more_dev_x, more_dev_y)
+
+plt.xlabel('Age')  # x ais labeled
+plt.ylabel('Donuts eaten')  # y ais labeled
+plt.title('Donuts eaten vs Age [Fake Data]')
+
+plt.legend(['older', 'younger'])
+
+plt.show()
