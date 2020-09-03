@@ -283,20 +283,23 @@ txt = "First module: {}".format(__name__)
 # print(txt)
 
 
-dev_x = [1, 2, 3, 4, 5]
-dev_y = [12, 9, 4, 5, 3]
+# Stackoverflow developer survey
 
+# Deluxe Package
+dev_x = [1, 2, 3, 4, 5, 6, 7]
+dev_y = [1, 3, 6, 7, 8, 20, 45]
 
-more_dev_x = [1, 2, 3, 4, 5]
-more_dev_y = [2, 3, 5, 7, 8]
+# Starter
+main_dev_x = [1, 2, 3, 4, 5, 6, 7]
+main_dev_y = [3, 7, 15, 27, 30, 45, 67]
 
-plt.plot(dev_x, dev_y)
-plt.plot(more_dev_x, more_dev_y)
+plt.plot(dev_x, dev_y, label='Deluxe Pack')  # the method to plot
+plt.plot(main_dev_x, main_dev_y, label='Starter pack')
+plt.xlabel('Day')  # x ais labeled
+plt.ylabel('Units sold')  # y ais labeled
+plt.title('Products Sold in a Week [Fake Data]')  # title
 
-plt.xlabel('Age')  # x ais labeled
-plt.ylabel('Donuts eaten')  # y ais labeled
-plt.title('Donuts eaten vs Age [Fake Data]')
+# plt.legend(['Dount', 'Cake'])
+plt.legend()
 
-plt.legend(['older', 'younger'])
-
-plt.show()
+plt.show()  # shows the data
